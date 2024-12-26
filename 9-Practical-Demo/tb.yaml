@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: tb
+  namespace: default
+spec:
+  params:
+    - name: firstname
+      value: $(body.firstname)
+    - name: lastname
+      value: $(body.lastname)
+
+

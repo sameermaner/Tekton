@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: echo-task-run
+  namespace: test-namespace
+spec:
+  taskRef:
+    name: cluster-task-echo
+    kind: ClusterTask

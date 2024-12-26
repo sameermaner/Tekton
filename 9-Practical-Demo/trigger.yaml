@@ -1,0 +1,16 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: Trigger
+metadata:
+  name: trigger
+  namespace: default
+spec:
+  bindings:
+    - ref: tb
+  template:
+    ref: tt
+  interceptors:
+    - ref:
+        name: cel
+      params:
+        - name: filter
+          value: "has(body.firstname) && has(body.lastname)"
